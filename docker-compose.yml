@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  webapp:
+    build:
+      context: ./
+      target: production
+    volumes:
+      - "$PWD/hosted_files:/opt/hostedfiles"
+    environment:
+      - HTD_DOCFILES_DIR=/opt/hostedfiles
+    ports:
+      - 80:5000
